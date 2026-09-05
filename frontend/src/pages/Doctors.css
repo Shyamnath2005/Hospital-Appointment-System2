@@ -1,0 +1,157 @@
+.doctors-page { padding-bottom: 4rem; }
+
+.doctors-filters {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+
+.doctors-search {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 280px;
+}
+.doctors-search .form-input { flex: 1; }
+
+.sort-select { max-width: 220px; }
+
+/* Specialty Chips */
+.specialty-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.chip {
+  padding: 0.4rem 0.875rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--neutral-400);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.chip:hover { background: rgba(255,255,255,0.1); color: var(--neutral-200); }
+.chip-active {
+  background: rgba(59,130,246,0.15);
+  border-color: rgba(59,130,246,0.4);
+  color: var(--primary-400);
+}
+
+/* Doctor Card */
+.doctor-card { overflow: hidden; }
+
+.doctor-card-header {
+  position: relative;
+  padding: 1.5rem 1.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.doctor-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(59,130,246,0.3);
+  object-fit: cover;
+}
+
+.doctor-availability {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--accent-400);
+  font-weight: 500;
+}
+.availability-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-500);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.doctor-card-body { padding: 1rem 1.5rem 1.5rem; }
+
+.doctor-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.25rem; }
+.doctor-specialty {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  color: var(--primary-400);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.doctor-qualification {
+  font-size: 0.82rem;
+  color: var(--neutral-400);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.doctor-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.stat { display: flex; flex-direction: column; gap: 0.15rem; }
+.stat-main { font-size: 0.9rem; font-weight: 600; color: var(--neutral-200); }
+.stat-sub { font-size: 0.75rem; color: var(--neutral-500); }
+.star-rating { color: #fbbf24; font-size: 0.85rem; }
+.rating-value { color: var(--neutral-200); font-weight: 600; }
+
+.doctor-hospital {
+  font-size: 0.83rem;
+  color: var(--neutral-400);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.doctor-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.consultation-fee { display: flex; flex-direction: column; }
+.fee-label { font-size: 0.72rem; color: var(--neutral-500); text-transform: uppercase; letter-spacing: 0.05em; }
+.fee-amount { font-size: 1.2rem; font-weight: 700; color: var(--accent-400); }
+
+/* Results */
+.results-count {
+  color: var(--neutral-400);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 5rem 0;
+}
+.no-results-icon { font-size: 4rem; margin-bottom: 1rem; }
+.no-results h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+.no-results p { color: var(--neutral-400); margin-bottom: 1.5rem; }
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.page-info { color: var(--neutral-400); font-size: 0.9rem; }
