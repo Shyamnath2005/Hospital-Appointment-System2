@@ -64,9 +64,30 @@ const doctorSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    hospitalLocation: {
+      type: String,
+      default: 'Chennai',
+    },
+    hospitalAddress: {
+      type: String,
+      default: '',
+    },
+    languages: {
+      type: [String],
+      default: ['English', 'Hindi'],
+    },
+    gender: {
+      type: String,
+      enum: ['Male', 'Female', 'Other'],
+      default: 'Male',
+    },
+    contactNumber: {
+      type: String,
+      default: '+91 44 2829 0200',
+    },
     bio: {
       type: String,
-      maxlength: 500,
+      maxlength: 1000,
     },
     avatar: {
       type: String,
@@ -80,6 +101,6 @@ const doctorSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-doctorSchema.index({ specialty: 1, name: 'text' });
+doctorSchema.index({ specialty: 1, hospital: 1, hospitalLocation: 1, name: 'text' });
 
 module.exports = mongoose.model('Doctor', doctorSchema);

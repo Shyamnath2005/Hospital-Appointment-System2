@@ -128,9 +128,37 @@ export default function BookAppointment() {
                 <strong>{doctor.rating} ({doctor.reviewCount} reviews)</strong>
               </div>
               <div className="info-row">
+                <span>🩺 Experience</span>
+                <strong>{doctor.experience} Years</strong>
+              </div>
+              <div className="info-row">
                 <span>🏥 Hospital</span>
                 <strong>{doctor.hospital}</strong>
               </div>
+              {doctor.hospitalLocation && (
+                <div className="info-row">
+                  <span>📍 Location</span>
+                  <strong>{doctor.hospitalLocation}</strong>
+                </div>
+              )}
+              {doctor.hospitalAddress && (
+                <div className="info-row">
+                  <span>🏢 Address</span>
+                  <strong style={{ fontSize: '0.85rem', fontWeight: 500 }}>{doctor.hospitalAddress}</strong>
+                </div>
+              )}
+              {doctor.languages && doctor.languages.length > 0 && (
+                <div className="info-row">
+                  <span>🗣️ Languages</span>
+                  <strong>{Array.isArray(doctor.languages) ? doctor.languages.join(', ') : doctor.languages}</strong>
+                </div>
+              )}
+              {doctor.contactNumber && (
+                <div className="info-row">
+                  <span>📞 Contact</span>
+                  <strong>{doctor.contactNumber}</strong>
+                </div>
+              )}
               <div className="info-row">
                 <span>📅 Available</span>
                 <strong>{doctor.availableDays?.join(', ')}</strong>
@@ -140,7 +168,12 @@ export default function BookAppointment() {
                 <strong className="fee-highlight">₹{doctor.consultationFee}</strong>
               </div>
             </div>
-            <p className="panel-bio">{doctor.bio}</p>
+            {doctor.bio && (
+              <>
+                <div className="panel-divider" />
+                <p className="panel-bio"><strong>About Doctor:</strong> {doctor.bio}</p>
+              </>
+            )}
           </aside>
 
           {/* Booking Form */}

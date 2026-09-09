@@ -8,16 +8,23 @@ const SPECIALTIES = [
   { icon: '🧠', name: 'Neurology', color: '#8b5cf6' },
   { icon: '🦴', name: 'Orthopedics', color: '#f59e0b' },
   { icon: '👶', name: 'Pediatrics', color: '#10b981' },
-  { icon: '🔬', name: 'Dermatology', color: '#ec4899' },
+  { icon: '✨', name: 'Dermatology', color: '#ec4899' },
   { icon: '👁️', name: 'Ophthalmology', color: '#3b82f6' },
-  { icon: '🦷', name: 'General Practice', color: '#06b6d4' },
+  { icon: '🩺', name: 'General Practice', color: '#06b6d4' },
   { icon: '🫁', name: 'Pulmonology', color: '#14b8a6' },
+  { icon: '🩺', name: 'Gastroenterology', color: '#f97316' },
+  { icon: '🎀', name: 'Gynecology', color: '#f43f5e' },
+  { icon: '🧬', name: 'Oncology', color: '#6366f1' },
+  { icon: '🧠', name: 'Psychiatry', color: '#a855f7' },
+  { icon: '🩸', name: 'Endocrinology', color: '#10b981' },
+  { icon: '🩻', name: 'Radiology', color: '#64748b' },
+  { icon: '🔬', name: 'Urology', color: '#1e40af' },
 ];
 
 const STATS = [
-  { value: '500+', label: 'Specialist Doctors' },
-  { value: '50K+', label: 'Patients Served' },
-  { value: '15+', label: 'Medical Specialties' },
+  { value: '150+', label: 'Specialist Doctors' },
+  { value: '16+', label: 'Premier Hospitals' },
+  { value: '15', label: 'Medical Specialties' },
   { value: '4.9★', label: 'Average Rating' },
 ];
 

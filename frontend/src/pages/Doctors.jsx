@@ -36,13 +36,14 @@ const DoctorCard = ({ doctor }) => (
           <span className="stat-sub">({doctor.reviewCount} reviews)</span>
         </div>
         <div className="stat">
-          <span className="stat-main">🏥 {doctor.experience} yrs</span>
+          <span className="stat-main">⭐ {doctor.experience} yrs</span>
           <span className="stat-sub">Experience</span>
         </div>
       </div>
 
       <div className="doctor-hospital">
-        <span>📍</span> {doctor.hospital}
+        <span>🏥</span> <strong>{doctor.hospital}</strong>
+        {doctor.hospitalLocation && <span style={{ opacity: 0.8 }}> ({doctor.hospitalLocation})</span>}
       </div>
 
       <div className="doctor-card-footer">
@@ -76,7 +77,7 @@ export default function Doctors() {
     try {
       const params = {
         page,
-        limit: 9,
+        limit: 12,
         sortBy,
         ...(selectedSpecialty !== 'All' && { specialty: selectedSpecialty }),
         ...(searchInput && { search: searchInput }),
@@ -112,7 +113,7 @@ export default function Doctors() {
       <div className="page-header">
         <div className="container">
           <h1>Find Your <span className="text-gradient">Doctor</span></h1>
-          <p>Browse from {total}+ specialist doctors across all departments</p>
+          <p>Browse from {total}+ specialist doctors across all departments & premier hospitals</p>
         </div>
       </div>
 
@@ -123,7 +124,7 @@ export default function Doctors() {
             <input
               type="text"
               className="form-input"
-              placeholder="🔍  Search by doctor name..."
+              placeholder="🔍  Search by doctor, hospital, or city..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
@@ -182,10 +183,10 @@ export default function Doctors() {
               >
                 ← Previous
               </button>
-              <span className="page-info">Page {page}</span>
+              <span className="page-info">Page {page} of {Math.ceil(total / 12) || 1}</span>
               <button
                 className="btn btn-ghost btn-sm"
-                disabled={doctors.length < 9}
+                disabled={page >= Math.ceil(total / 12)}
                 onClick={() => setPage((p) => p + 1)}
               >
                 Next →
